@@ -1,0 +1,22 @@
+
+
+h1 {
+	font-family:  cursive;
+	color: #777777;
+}
+body{
+	background: white url("images/img3.jpg");
+}
+
+.navbar-brand{
+	font-family: 'Satisfy', cursive;
+}
+
+p{
+	font-family:  cursive;
+}
+
+h3{
+	font-family:  cursive;
+}
+

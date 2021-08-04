@@ -1,0 +1,151 @@
+{% load staticfiles %}
+<html>
+
+<head>
+<title>{% block head_title %}Instblog{% endblock head_title %}</title> <!--changes the name in tab -->
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+<!-- Optional theme -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script> 
+
+
+
+<style>
+{% block style %}{% endblock style %}
+</style>
+</head>
+<body>
+
+
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v2.9";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v2.9";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v2.9";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
+</body>
+<link rel = "stylesheet" href='{% static "css/base.css" %}' />
+
+<div class='container'>
+
+
+
+
+</div>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>{% block title %}INSTBlog{% endblock %}</title>
+	<!--loads the path to your static files -->
+	{% load staticfiles %}
+	 <!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+	<link href='https://fonts.googleapis.com/css?family=Satisfy' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" type="text/css" href="{% static 'music/style.css' %}" />
+	<!-- jQuery library -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+	<!-- Latest compiled JavaScript -->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+<!--<script src={% static 'music/js/main.js' %}"></script>--> 
+</head>
+<body>
+	
+	<nav class="navbar navbar-inverse">
+	<div class="container-field"> <!--container-fluid-navigation bar fills the whole width of page -->
+	
+	<!--header -->
+
+	<div class="navbar-header">  <!--navbar-header to indicate logo -->
+		<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#topNavBar"> <!--menu button-->
+			<span class="icon-bar"></span>
+			<span class="icon-bar"></span>
+			<span class="icon-bar"></span> <!--21 22 23 to make lines on menu button-->
+		</button>
+		<a class="navbar-brand" href="{% url 'posts:list' %}">INSTBlog</a>	
+	</div>
+
+	<!--navigation Items-->
+	<div class="collapse navbar-collapse" id="topNavBar"> <!--items under this will collapse-->
+		
+
+	<ul class="nav navbar-nav">
+			<li class=""> <!--active : the button currently active always lit up-->
+				
+			</li>
+			<li class="">
+				<a href="/posts/{{ instance.slug }}/edit/">  
+					<span class="glyphicon glyphicon-edit" aria-hidden="true"></span>&nbsp; Edit
+					<!--glyphicon glyphicon-music : music icon before songs button ,&nbsp:for spacing between two buttons-->
+				</a>
+			</li> 
+
+			<li class="">
+				<a href="/posts/{{ instance.slug }}/delete/">
+					<span class="glyphicon glyphicon-trash" aria-hidden="true"></span>&nbsp; Delete
+					<!--glyphicon glyphicon-music : music icon before songs button ,&nbsp:for spacing between two buttons-->
+				</a>
+			</li> 
+		</ul> 
+
+		
+
+		<ul class="nav navbar-nav navbar-right">
+			<li class="">
+				<a href="{% url 'posts:post_create' %}">
+					<span class="glyphicon glyphicon-plus" aria-hidden="true"></span>&nbsp; Create New
+				</a>
+			</li>
+
+		
+		</ul>
+
+		
+
+		
+	</div>
+	
+	</div>
+</nav>
+{% block body %} <!--to include this code in other html files-->
+{% endblock %}
+</body>
+</html>
+
+<!-- Latest compiled and minified JavaScript -->
+
+
+
+{% block content %}
+
+{% endblock content %}
+
+</html>
+
+

@@ -1,0 +1,50 @@
+
+{% extends "base_visitor.html" %}
+{% block head_title %}{{instance.title}} | {{ block.super }}{% endblock head_title %} 
+
+
+
+{% block content %}
+<div class='col-sm-8 col-sm-offset-2'>
+    <div class="thumbnail">
+    	{% if instance.image %}
+      	<img src ='{{ instance.image.url }}' class='img-responsive' />
+      	{% endif %}
+
+        <!--{{ request.build_absolute_uri }} link of my website -->
+       <p> <div class="fb-like" data-href="request.build_absolute_uri" data-layout="standard" data-action="like" data-size="small" data-show-faces="true" data-share="true"></div></p>
+
+       <p><div class="fb-send" data-href="request.build_absolute_uri"></div></p>
+
+        <a href="https://www.facebook.com/sharer/sharer.php?u={{ request.build_absolute_uri }}">
+Facebook |
+  </a>
+     
+      
+</a>
+
+      <a href='https://plus.google.com/share?url={{ request.build_absolute_uri }}'>
+
+      <a href="https://www.linkedin.com/shareArticle?mini=true&url={{ request.build_absolute_uri }}&title={{instance.title}}&summary={{ share_string }} &source={{ request.build_absolute_uri }}">
+Linkedin
+</a>
+      <div class="caption">
+     
+       <p><font   color="1e90ff" size="6">{{ title }}</font> &nbsp <font size="3" color="87ceeb">{{ instance.timestamp}}</font><small></p>
+        <font size="3"><p>{{ instance.content | linebreaks }}</p></font>
+       
+        
+
+
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+{% endblock content %}
+
+
+
